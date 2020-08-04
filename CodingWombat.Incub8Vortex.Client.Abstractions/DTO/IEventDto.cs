@@ -5,8 +5,8 @@ namespace CodingWombat.Incub8Vortex.Client.Abstractions.DTO
 {
     public interface IEventDto
     {
-        public string Name { get; set; }
-        public DateTime Timestamp { get; set; }
+        public string Name { get; }
+        public DateTime Timestamp { get; }
         public Dictionary<string, object> Attributes { get; set; }
     }
 }

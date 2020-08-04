@@ -1,7 +1,6 @@
 ﻿using CodingWombat.Incub8Vortex.Client.Abstractions.Client;
 using CodingWombat.Incub8Vortex.Client.Client;
 using CodingWombat.Incub8Vortex.Client.Configuration;
-using CodingWombat.Incub8Vortex.Client.DTO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
@@ -13,7 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
             IConfiguration configuration)
         {
             services.Configure<VortexConfiguration>(configuration.GetSection(VortexConfiguration.Name));
-            services.TryAddTransient<IVortexClient<EventDto>,VortexClient>();
+            services.TryAddTransient(typeof(IVortexClient<>),typeof(VortexClient<>));
             
             return services;
         }
