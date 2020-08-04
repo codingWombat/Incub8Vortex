@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.Client.Abstractions", "CodingWombat.Incub8Vortex.Client.Abstractions\CodingWombat.Incub8Vortex.Client.Abstractions.csproj", "{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.ClientExtensions", "CodingWombat.Incub8Vortex.ClientExtensions\CodingWombat.Incub8Vortex.ClientExtensions.csproj", "{6D6D433A-6AB8-4D9B-BB5A-9D8A9DBBCC99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6D433A-6AB8-4D9B-BB5A-9D8A9DBBCC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6D433A-6AB8-4D9B-BB5A-9D8A9DBBCC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6D433A-6AB8-4D9B-BB5A-9D8A9DBBCC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6D433A-6AB8-4D9B-BB5A-9D8A9DBBCC99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
