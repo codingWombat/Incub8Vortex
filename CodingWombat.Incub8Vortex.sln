@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.Client", "CodingWombat.Incub8Vortex.Client\CodingWombat.Incub8Vortex.Client.csproj", "{4871BB04-8EC5-4000-9C89-218A3A9A9936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.Client.Abstractions", "CodingWombat.Incub8Vortex.Client.Abstractions\CodingWombat.Incub8Vortex.Client.Abstractions.csproj", "{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4871BB04-8EC5-4000-9C89-218A3A9A9936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4871BB04-8EC5-4000-9C89-218A3A9A9936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4871BB04-8EC5-4000-9C89-218A3A9A9936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4871BB04-8EC5-4000-9C89-218A3A9A9936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB218BCF-4C27-4B8A-A316-40F3C165E0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
