@@ -24,7 +24,7 @@ jobs:
     - name: Install version tool
       run: dotnet tool install -g dotnet-setversion
     - name: Call version tool
-      run: setversion -r "@version.txt
+      run: setversion -r "@version.txt"
     - name: publish
       run: dotnet publish --configuration Release
     - name: build package
