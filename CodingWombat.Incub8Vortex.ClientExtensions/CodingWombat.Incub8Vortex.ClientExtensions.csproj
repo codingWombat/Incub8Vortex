@@ -1,23 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-        <Authors>Thomas Budde</Authors>
-        <Description>Unofficial event client to integrate the https://vortex.incub8.de/ data warehouse.</Description>
-        <PackageLicenseUrl>https://github.com/codingWombat/Incub8Vortex/blob/develop/LICENSE.md</PackageLicenseUrl>
-        <RepositoryUrl>https://github.com/codingWombat/Incub8Vortex</RepositoryUrl>
-        <RepositoryType>Git</RepositoryType>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.6" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.6" />
-      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.6" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\CodingWombat.Incub8Vortex.Client\CodingWombat.Incub8Vortex.Client.csproj" />
-    </ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Thomas Budde</Authors>
+    <Description>Unofficial event client to integrate the https://vortex.incub8.de/ data warehouse.</Description>
+    <PackageLicenseUrl>https://github.com/codingWombat/Incub8Vortex/blob/develop/LICENSE.md</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/codingWombat/Incub8Vortex</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.0.1-snapshot
+</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodingWombat.Incub8Vortex.Client\CodingWombat.Incub8Vortex.Client.csproj" />
+  </ItemGroup>
 </Project>
