@@ -2,7 +2,7 @@ name: nuget
 
 on:
   push:
-    branches: [ develop, master ]
+    branches: [ develop ]
 
 jobs:
 
@@ -23,6 +23,18 @@ jobs:
         nuget-version: 'latest'
     - name: Install version tool
       run: dotnet tool install -g dotnet-setversion
+    - name: save version to variable
+      shell: bash
+      run: echo "##[set-output name=version;]$(cat version.txt)"
+      id: extract_version
+    - name: save timestamp to variable
+      shell: bash
+      run: echo "##[set-output name=timestap;]$(date +"%Y%m%d%H%M%S)"
+      id: extract_time
+    - name: add timestamp to snapshotversion
+      shell: bash
+      run:  echo ${{ steps.extract_branch.outputs.version }}"-"${{ steps.extract_branch.outputs.timestap }} > version.txt
+      id: set_version
     - name: Call version tool
       run: setversion -r "@version.txt"
     - name: publish
