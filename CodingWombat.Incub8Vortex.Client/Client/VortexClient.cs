@@ -27,9 +27,11 @@ namespace CodingWombat.Incub8Vortex.Client.Client
         {
             var uri = BuildUri();
 
-            var postRequest = HttpRequestMessage(eventDtos, uri);
-            
-
+            var postRequest = new HttpRequestMessage(HttpMethod.Post, uri)
+            {
+                Content = JsonContent.Create(eventDtos)
+            };
+           
             await SendEventAsyncInternal(postRequest);
         }
 
@@ -37,20 +39,13 @@ namespace CodingWombat.Incub8Vortex.Client.Client
         {
             var uri = BuildUri();
 
-            var postRequest = HttpRequestMessage(eventDto, uri);
-
-            await SendEventAsyncInternal(postRequest);
-        }
-
-        private HttpRequestMessage HttpRequestMessage(object payload, Uri uri)
-        {
             var postRequest = new HttpRequestMessage(HttpMethod.Post, uri)
             {
-                Content = JsonContent.Create(payload)
+                Content = JsonContent.Create(eventDto)
             };
-            return postRequest;
+            
+            await SendEventAsyncInternal(postRequest);
         }
-
         private async Task SendEventAsyncInternal(HttpRequestMessage postRequest)
         {
             var client = new HttpClient();
@@ -76,7 +71,7 @@ namespace CodingWombat.Incub8Vortex.Client.Client
         
         private Uri BuildUri()
         {
-            var builder = new UriBuilder(BaseUrl) {Port = -1};
+            var builder = new UriBuilder(BaseUrl) {Port = 5001};
 
             var query = HttpUtility.ParseQueryString(builder.Query);
             query["apikey"] = _configuration.ApiKey;
