@@ -33,7 +33,7 @@ jobs:
       id: extract_time
     - name: add timestamp to snapshotversion
       shell: bash
-      run:  echo ${{ steps.extract_branch.outputs.version }}"."${{ steps.extract_branch.outputs.timestap }} > version.txt
+      run:  echo ${{ steps.extract_version.outputs.version }}"."${{ steps.extract_time.outputs.timestap }} > version.txt
       id: set_version
     - name: Call version tool
       run: setversion -r "@version.txt"
