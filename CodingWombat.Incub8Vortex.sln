@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.Client.Tests", "CodingWombat.Incub8Vortex.Client.Tests\CodingWombat.Incub8Vortex.Client.Tests.csproj", "{11F2EE74-A5A6-42E8-9DA2-3D66E4ADF0A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingWombat.Incub8Vortex.Logger", "CodingWombat.Incub8Vortex.Logger\CodingWombat.Incub8Vortex.Logger.csproj", "{AA274FFE-8AD3-4984-BD76-7C97BD257F84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{11F2EE74-A5A6-42E8-9DA2-3D66E4ADF0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F2EE74-A5A6-42E8-9DA2-3D66E4ADF0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F2EE74-A5A6-42E8-9DA2-3D66E4ADF0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA274FFE-8AD3-4984-BD76-7C97BD257F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA274FFE-8AD3-4984-BD76-7C97BD257F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA274FFE-8AD3-4984-BD76-7C97BD257F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA274FFE-8AD3-4984-BD76-7C97BD257F84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -12,8 +12,8 @@ namespace Microsoft.Extensions.DependencyInjection
             IConfiguration configuration)
         {
             services.Configure<VortexConfiguration>(configuration.GetSection(VortexConfiguration.Name));
-            services.TryAddTransient(typeof(IVortexClient<>),typeof(VortexClient<>));
-            
+            services.TryAddTransient(typeof(IVortexClient<>), typeof(VortexClient<>));
+            services.TryAddTransient(typeof(INonLoggingVortexClient<>), typeof(NonLoggingVortexClient<>));
             return services;
         }
     }

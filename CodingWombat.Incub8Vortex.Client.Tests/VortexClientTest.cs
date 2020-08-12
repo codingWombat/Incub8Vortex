@@ -2,9 +2,6 @@ using System;
 using System.Reflection;
 using CodingWombat.Incub8Vortex.Client.Client;
 using CodingWombat.Incub8Vortex.Client.Configuration;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Moq;
 using Xunit;
 
 namespace CodingWombat.Incub8Vortex.Client.Tests
@@ -14,12 +11,8 @@ namespace CodingWombat.Incub8Vortex.Client.Tests
         [Fact]
         public void TestBuildUri()
         {
-            var logger = new Mock<ILogger<VortexClient<TestEventDto>>>();
-            var options = new Mock<IOptions<VortexConfiguration>>();
-            options.Setup(config => config.Value)
-                .Returns(new VortexConfiguration {ApiKey = "1337"});
             
-            var vortexClient = new VortexClient<TestEventDto>(logger.Object, options.Object);
+            var vortexClient = new NonLoggingVortexClient<TestEventDto>(new VortexConfiguration {ApiKey = "1337"});
 
             var methodInfo =
                 typeof(VortexClient<TestEventDto>).GetMethod("BuildUri",
