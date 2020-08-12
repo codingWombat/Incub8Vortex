@@ -58,7 +58,7 @@ namespace CodingWombat.Incub8Vortex.Client.Client
 
         private Uri BuildUri()
         {
-            var builder = new UriBuilder(BaseUrl) {Port = 5001};
+            var builder = new UriBuilder(BaseUrl);
 
             var query = HttpUtility.ParseQueryString(builder.Query);
             query["apikey"] = _configuration.ApiKey;
