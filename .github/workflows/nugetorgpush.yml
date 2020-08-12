@@ -30,10 +30,10 @@ jobs:
     - name: build package
       run: dotnet pack --configuration Release
     - name: push abstraction
-      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Client.Abstractions/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NuGetAPIKey }} 
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Client.Abstractions/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGETORGAPIKEY }} 
     - name: push client
-      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Client/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NuGetAPIKey }}
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Client/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGETORGAPIKEY }}
     - name: push extensions
-      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.ClientExtensions/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NuGetAPIKey }}
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.ClientExtensions/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGETORGAPIKEY }}
     - name: push logger
-      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Logger/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NuGetAPIKey }}
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Logger/bin/Release/*.nupkg -source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGETORGAPIKEY }}
