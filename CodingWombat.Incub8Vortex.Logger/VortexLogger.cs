@@ -9,13 +9,13 @@ namespace CodingWombat.Incub8Vortex.Logger
     {
         private readonly string _name;
         private readonly VortexLoggerConfiguration _config;
-        private readonly VortexLoggingClient _vortexClient;
-
+        private readonly VortexLogEventProcessor _processor;
+        
         public VortexLogger(string name, VortexLoggerConfiguration config)
         {
             _name = name;
             _config = config;
-            _vortexClient = new VortexLoggingClient(_config);
+            _processor = new VortexLogEventProcessor(_config);
         }
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception,
@@ -39,7 +39,7 @@ namespace CodingWombat.Incub8Vortex.Logger
             attributes["State"] = formatter(state, exception);
             var eventDto = new LogEventDto { Attributes = attributes};
 
-            _vortexClient.SendEventAsync(eventDto);
+            _processor.EnqueueEvent(eventDto);
         }
 
         public bool IsEnabled(LogLevel logLevel)
