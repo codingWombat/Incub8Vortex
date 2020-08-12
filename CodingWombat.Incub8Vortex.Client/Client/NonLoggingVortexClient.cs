@@ -11,7 +11,7 @@ namespace CodingWombat.Incub8Vortex.Client.Client
 {
     public class NonLoggingVortexClient<TEventDto> : INonLoggingVortexClient<TEventDto> where TEventDto : IEventDto
     {
-        private static readonly Uri BaseUrl = new Uri("https://api.codingwombat.dev:5001/Vombatidae/ee576b2b-20fa-4487-8340-3ebd9ad65fcf/");
+        private static readonly Uri BaseUrl = new Uri("https://vortex.incub8.de/api/event/");
         private readonly VortexConfiguration _configuration;
 
         public NonLoggingVortexClient(VortexConfiguration configuration)
