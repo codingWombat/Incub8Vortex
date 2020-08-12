@@ -1,22 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Thomas Budde</Authors>
     <Description>Unofficial event client to integrate the https://vortex.incub8.de/ data warehouse.</Description>
-    <PackageProjectUrl>https://github.com/codingWombat/Incub8Vortex</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/codingWombat/Incub8Vortex/blob/develop/LICENSE.md</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/codingWombat/Incub8Vortex</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.0.0.1
 </Version>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CodingWombat.Incub8Vortex.Client.Abstractions\CodingWombat.Incub8Vortex.Client.Abstractions.csproj" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.6" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.6" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="3.1.6" />
-    <PackageReference Include="System.Net.Http.Json" Version="3.2.1" />
+    <ProjectReference Include="..\CodingWombat.Incub8Vortex.Client\CodingWombat.Incub8Vortex.Client.csproj" />
   </ItemGroup>
 </Project>

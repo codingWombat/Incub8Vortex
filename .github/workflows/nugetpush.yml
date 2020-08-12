@@ -1,0 +1,49 @@
+name: nuget
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.302
+    - uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: 'latest'
+    - name: Install version tool
+      run: dotnet tool install -g dotnet-setversion
+    - name: save version to variable
+      shell: bash
+      run: echo "##[set-output name=version;]$(cat version.txt)"
+      id: extract_version
+    - name: save timestamp to variable
+      shell: bash
+      run: echo "##[set-output name=timestap;]$(date +"%Y%m%d%H%M%S")"
+      id: extract_time
+    - name: add timestamp to snapshotversion
+      shell: bash
+      run:  echo ${{ steps.extract_version.outputs.version }}${{ steps.extract_time.outputs.timestap }} > version.txt
+      id: set_version
+    - name: Call version tool
+      run: setversion -r "@version.txt"
+    - name: publish
+      run: dotnet publish --configuration Release
+    - name: build package
+      run: dotnet pack --configuration Release
+    - name: push abstraction
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Client.Abstractions/bin/Release/*.nupkg -source https://repo.codingwombat.dev/repository/nuget-hosted/ -ApiKey ${{ secrets.NuGetAPIKey }} 
+    - name: push client
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.Client/bin/Release/*.nupkg -source https://repo.codingwombat.dev/repository/nuget-hosted/ -ApiKey ${{ secrets.NuGetAPIKey }}
+    - name: push extensions
+      run: nuget push /home/runner/work/Incub8Vortex/Incub8Vortex/CodingWombat.Incub8Vortex.ClientExtensions/bin/Release/*.nupkg -source https://repo.codingwombat.dev/repository/nuget-hosted/ -ApiKey ${{ secrets.NuGetAPIKey }}
