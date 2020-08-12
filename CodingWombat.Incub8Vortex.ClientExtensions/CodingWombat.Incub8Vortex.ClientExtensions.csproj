@@ -7,7 +7,7 @@
     <RepositoryUrl>https://github.com/codingWombat/Incub8Vortex</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.0.1-snapshot
+    <Version>0.0.0.1
 </Version>
   </PropertyGroup>
   <ItemGroup>
