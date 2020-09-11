@@ -15,11 +15,11 @@ namespace CodingWombat.Incub8Vortex.Client.Tests
             var vortexClient = new NonLoggingVortexClient<TestEventDto>(new VortexConfiguration {ApiKey = "1337"});
 
             var methodInfo =
-                typeof(VortexClient<TestEventDto>).GetMethod("BuildUri",
+                typeof(NonLoggingVortexClient<TestEventDto>).GetMethod("BuildUri",
                     BindingFlags.NonPublic | BindingFlags.Instance);
             object[] parameters = {};
             var result = (Uri)methodInfo?.Invoke(vortexClient, parameters);
-            Assert.Equal(result, new Uri("https://vortex.incub8.de/api/event?apikey=1337"));
+            Assert.Equal(new Uri("https://vortex.incub8.de/api/event?apikey=1337"), result );
         }
     }
 }
